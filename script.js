@@ -101,7 +101,7 @@ function useApiData(data) {
     let lastQuest = nbQuest
     function fin(){       
         if(lastQuest == 0){
-            intro2.innerHTML = "Nice, this awesome game is over, like the music of Guetta and Kelly rowland <br> Your fucking score  score is "+ point
+            intro2.innerHTML = "Nice, this awesome game is over, like the music of Guetta and Kelly rowland <br> Your fucking score is "+ point
             david.style.display="block"
         }
     }
