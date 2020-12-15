@@ -1,0 +1,85 @@
+html{
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #C70039;
+   
+}
+body{
+    background-color: #900C3E;
+    border-radius: 10px;
+}
+.cadre{
+    background-color: #FFC300;
+    border: inset #FF5733 3px;
+    color: #571845;
+    padding: 5%;
+    transition-duration: 1s;
+}
+.textCenter{
+    text-align: center;
+    transition-duration: 1s;
+}
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    transition-duration: 1s;
+}
+.fontsize{
+    font-size: 30px;
+}
+.boutonValid{
+    margin-top: 10px;
+    background-color: #FF5733;
+    width: fit-content;
+    margin-left: auto;
+    margin-right:auto ;
+    padding: 10px;
+    border: solid  #571845 1px;
+    border-radius: 10px;
+    transition-duration: 1s;
+}
+.boutonValid:hover{
+    background-color:#924e7f ; 
+}
+.smallSize{
+    padding-top: 30px;
+    font-size: 20px;
+}
+.correct{
+    background-color: #FF5733;
+    color:  #571845;
+}
+.fa-check{
+    left: 50%;
+    color:#9dff00;
+    font-size: 200px;
+}
+.fa-times{
+    left: 50%;
+    color:#ee0c0c;
+    font-size: 200px;
+}
+#nice{
+    color: greenyellow;
+    font-size: 50px;
+}
+.slidein {
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-direction: alternate;
+    transition-duration: 1s;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+  
+    to {
+      margin-left:0%;
+      width:100%;
+    }
+  }
