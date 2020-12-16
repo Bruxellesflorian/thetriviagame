@@ -17,25 +17,24 @@ const selector = document.createElement("select")
 
 //______________________________________________________________Choix Genre
 
-const listcategory = ["General knowledge", " Books", " Film", " Music", " Musicals & Theatres", " Television", " Video Games", " Board Games", "Science & Nature", "Science: Computers", "Science Mathematics", "Mythology", "Sports", "Geography", "History", "Politics", "Art", "Celebrities"]
+const listcategory = ["General knowledge", "Books", "Film", "Music", "Musicals & Theatres", "Television", "Video Games", "Board Games", "Science & Nature", "Science: Computers", "Science Mathematics", "Mythology", "Sports", "Geography", "History", "Politics", "Art", "Celebrities"]
 
 const selectorCATEGORY = document.createElement("select")
-
+let opti;
 for (let i = 0; i < listcategory.length; i++) {
     const optionCATEGORY = document.createElement("option")
     optionCATEGORY.innerHTML = listcategory[i]
     selectorCATEGORY.appendChild(optionCATEGORY)
-    selectorCATEGORY.addEventListener("click",function(e){
-    
-        for (let u =0 ; u<listcategory.length;u++){
-            if(e.target.value.match(listcategory[u])){
-                opti = u+9
-                console.log('opti:', opti)
-                
-            }
-        }
-    })
+
 }
+selectorCATEGORY.addEventListener("click",function(e){
+    for (let u =0 ; u<listcategory.length;u++){
+        if(e.target.value.match(listcategory[u])){
+            opti = u 
+            console.log('opti:', opti)
+        }
+    }
+})
 
 
 //______________________________________________________________Difficulty 
@@ -80,6 +79,7 @@ selector.addEventListener("click", function () {
 
 //______________________________________________________________Start API
 async function sendApiRequest() {
+    opti = opti + 9
     console.log('opti:', opti)
     let response = await fetch("https://opentdb.com/api.php?amount=" + selector.value + "&category=" + opti + "&difficulty=" + selectorDIFFICULTY.value + "&type=boolean");
     let data = await response.json()
