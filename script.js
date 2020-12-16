@@ -25,15 +25,18 @@ for (let i = 0; i < listcategory.length; i++) {
     const optionCATEGORY = document.createElement("option")
     optionCATEGORY.innerHTML = listcategory[i]
     selectorCATEGORY.appendChild(optionCATEGORY)
+    selectorCATEGORY.addEventListener("click",function(e){
+    
+        for (let u =0 ; u<listcategory.length;u++){
+            if(e.target.value.match(listcategory[u])){
+                opti = u+9
+                console.log('opti:', opti)
+                
+            }
+        }
+    })
 }
 
-selectorCATEGORY.addEventListener("click",function(){
-    for (let i =0 ; i<listcategory.length;i++){
-        if(selectorCATEGORY.value.match(listcategory[i])){
-            opti = i+9
-        }
-    }
-})
 
 //______________________________________________________________Difficulty 
 
@@ -77,6 +80,7 @@ selector.addEventListener("click", function () {
 
 //______________________________________________________________Start API
 async function sendApiRequest() {
+    console.log('opti:', opti)
     let response = await fetch("https://opentdb.com/api.php?amount=" + selector.value + "&category=" + opti + "&difficulty=" + selectorDIFFICULTY.value + "&type=boolean");
     let data = await response.json()
     console.log(data);
@@ -88,6 +92,7 @@ async function sendApiRequest() {
 const nice = document.querySelector("#nice")
 let point = 0;
 function useApiData(data) {
+    
     let nbQuest = selector.value;
     const category = document.createElement("div")
     category.innerHTML = selectorCATEGORY.value
@@ -107,6 +112,7 @@ function useApiData(data) {
     }
 
     for (let i = 0; i < nbQuest; i++) {
+        intro2.style.height ="fit-content"
         const hr = document.createElement("hr")
         intro2.appendChild(hr)
         const question = document.createElement("div")
