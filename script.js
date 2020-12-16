@@ -30,7 +30,7 @@ for (let i = 0; i < listcategory.length; i++) {
 selectorCATEGORY.addEventListener("click",function(e){
     for (let u =0 ; u<listcategory.length;u++){
         if(e.target.value.match(listcategory[u])){
-            opti = u 
+            opti = u + 9
             console.log('opti:', opti)
         }
     }
@@ -79,11 +79,8 @@ selector.addEventListener("click", function () {
 
 //______________________________________________________________Start API
 async function sendApiRequest() {
-    opti = opti + 9
-    console.log('opti:', opti)
     let response = await fetch("https://opentdb.com/api.php?amount=" + selector.value + "&category=" + opti + "&difficulty=" + selectorDIFFICULTY.value + "&type=boolean");
     let data = await response.json()
-    console.log(data);
     useApiData(data)
     // .catch(error => {
     //     alert("bug")
@@ -133,7 +130,6 @@ function useApiData(data) {
         }
         answer1.addEventListener("click", function () {
             lastQuest--
-            console.log("gg");
             point++
             fin()
             nice.innerHTML = point
@@ -149,7 +145,6 @@ function useApiData(data) {
         answer2.addEventListener("click", function () {
             lastQuest--
             fin()
-            console.log("lose");
             answer1.style.display ="none"
             answer2.style.display ="none"
             question.style.display ="none"

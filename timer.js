@@ -39,14 +39,11 @@ suiv.addEventListener("click", function () {
         select3()
         page++
     }else if (page ==2){
-        
-        console.log(rec);
-        console.log(rec2);
-        console.log(rec3);
+
     }
 })
 function select2() {
-    console.log(rec);
+
     setTimeout(() => {
         intro.innerHTML = "Select DIFFICULTY !!" + "<br>"
         intro.appendChild(selectorDIFFICULTY)
@@ -54,8 +51,7 @@ function select2() {
     }, 500);
 }
 function select3(){
-    console.log(rec);
-    console.log(rec2);
+
     setTimeout(() => {
         intro.innerHTML ="Select how many question ?" + "<br>"
         intro.appendChild(selector)
